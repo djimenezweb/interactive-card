@@ -5,7 +5,8 @@
 }
 
 * {
-  outline: 1px dashed rgba(255, 0, 0, 0.4);
+  box-sizing: border-box;
+  /* outline: 1px dashed rgba(255, 0, 0, 0.4); */
 }
 
 body {
@@ -19,12 +20,149 @@ body {
 
 .main {
   display: grid;
-  height: 700px;
-  grid-template-columns: 1fr;
 }
 
 @media screen and (min-width:768px) {
   .main {
     grid-template-columns: 1fr 2fr;
+    height: 700px;
   }
+}
+
+.column-left {
+  position: relative;
+  width: 100%;
+  height: 225px;
+  background-image: url(../assets/images/bg-main-mobile.png);
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width:768px) {
+  .column-left {
+    height: 700px;
+    background-image: url(../assets/images/bg-main-desktop.png);
+  }
+}
+
+.column-right {
+  background-color: lightgray;
+  height: 700px;
+}
+
+.card {
+  position: absolute;
+  width: 290px;
+  height: 150px;
+  border-radius: 0.5rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.card--front {
+  padding: 1rem;
+  top: 125px;
+  left: 40px;
+  background-image: url(../assets/images/bg-card-front.png);
+  z-index: 1;
+}
+
+@media screen and (min-width:768px) {
+  .card--front {
+    top: 175px;
+    left: 300px;
+  }
+}
+
+.card__number,
+.card__name,
+.card__exp {
+  position: absolute;
+}
+
+.card__number {
+  font-size: 1.3rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  bottom: 20%;
+}
+
+.card__name,
+.card__exp {
+  bottom: 0;
+  font-size: 0.8rem;
+}
+
+.card__exp {
+  right: 20px;
+}
+
+.card--back {
+  top: 25px;
+  left: 60px;
+  background-image: url(../assets/images/bg-card-back.png);
+}
+
+@media screen and (min-width:768px) {
+  .card--back {
+    top: 400px;
+    left: 350px;
+  }
+}
+
+.card__cvc {
+  position: absolute;
+  right: 30px;
+  top: 50px;
+}
+
+.form {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+}
+
+@media screen and (min-width:768px) {
+  .form {
+    width: 500px;
+    margin-top: 100px;
+  }
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+
+.form__label {
+  font-size: 0.8rem;
+}
+
+.form__input {
+  outline: none;
+  border: 0;
+  border-radius: .5rem;
+  height: 2rem;
+  padding-left: 1rem;
+}
+
+.form__input:focus {
+  border: 1px solid hsl(249, 99%, 64%);
+}
+
+::placeholder {
+  opacity: 0.5;
+}
+
+.button {
+  width: 100%;
+  height: 3rem;
+  border-radius: .5rem;
+  background-color: var(--button);
+  color: white;
+  font-size: 1.2rem;
 }
