@@ -1,0 +1,30 @@
+:root {
+  --input-focus: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  --input-error: hsl(0, 100%, 66%);
+  --button: hsl(278, 68%, 11%);
+}
+
+* {
+  outline: 1px dashed rgba(255, 0, 0, 0.4);
+}
+
+body {
+  margin: 0;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: #333;
+}
+
+.main {
+  display: grid;
+  height: 700px;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width:768px) {
+  .main {
+    grid-template-columns: 1fr 2fr;
+  }
+}
