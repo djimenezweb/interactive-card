@@ -78,6 +78,7 @@ body {
 .card__name,
 .card__exp {
   position: absolute;
+  text-transform: uppercase;
 }
 
 .card__number {
